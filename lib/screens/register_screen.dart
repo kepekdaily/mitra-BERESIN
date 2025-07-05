@@ -12,6 +12,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   final TextEditingController emailController = TextEditingController();
   final TextEditingController nameController = TextEditingController();
+  final TextEditingController addressController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmController = TextEditingController();
 
@@ -60,7 +61,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
               //Alamat
               TextFormField(
-                controller: nameController,
+                controller: addressController,
                 decoration: const InputDecoration(
                   labelText: 'Alamat',
                   border: OutlineInputBorder(),
@@ -68,6 +69,8 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 validator: (value) =>
                 value!.isEmpty ? 'Alamat wajib diisi' : null,
               ),
+
+              const SizedBox(height: 16),
 
               // Password
               TextFormField(

@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
-import 'routes.dart'; // harus mengandung route '/' ke AuthScreen
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart'; // pastikan path ini sesuai lokasi kamu
+import 'routes.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
   runApp(const BeresinApp());
 }
 
@@ -18,8 +25,8 @@ class BeresinApp extends StatelessWidget {
         useMaterial3: true,
         fontFamily: 'Roboto',
       ),
-      initialRoute: '/', // ⬅️ masuk ke AuthScreen dulu
-      routes: appRoutes, // ⬅️ didefinisikan di routes.dart
+      initialRoute: '/',
+      routes: appRoutes,
     );
   }
 }

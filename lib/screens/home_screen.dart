@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import '../widgets/bottom_nav.dart';
+import 'chat_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -58,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: Colors.orange,
         elevation: 0,
         title: const Text(
-          'Beresin - Pekerja',
+          'Beresin - Worker',
           style: TextStyle(
             color: Colors.white,
             fontWeight: FontWeight.w600,
@@ -192,23 +193,37 @@ class _HomeScreenState extends State<HomeScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     quickActionButton(
-                      icon: Icons.account_balance_wallet,
-                      label: 'Dompet',
-                      onTap: () {},
-                    ),
+                  icon: Icons.account_balance_wallet,
+                  label: 'Dompet',
+                  onTap: () {
+                    Navigator.pushNamed(context, '/dompet');
+                  },
+                ),
+
+
                     quickActionButton(
                       icon: Icons.history,
                       label: 'Riwayat',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.pushNamed(context, '/riwayat');
+                      },
                     ),
+
                     quickActionButton(
                       icon: Icons.chat,
                       label: 'Chat',
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ChatScreen(chatId: 'order123_user456_worker789'), // ← Ganti dengan ID dinamis kalau ada
+                          ),
+                        );
+                      },
                     ),
                     quickActionButton(
                       icon: Icons.book,
-                      label: 'Pelatihan',
+                      label: 'CMS',
                       onTap: () {},
                     ),
                   ],

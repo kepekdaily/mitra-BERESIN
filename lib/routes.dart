@@ -7,6 +7,8 @@ import '../screens/auth_screen.dart';
 import '../screens/work_regist_screen.dart';
 import '../screens/order_screen.dart';
 import '../screens/orderlist_screen.dart';
+import '../screens/riwayat_screen.dart';
+import '../screens/dompet_screen.dart';
 
 final Map<String, WidgetBuilder> appRoutes = {
   '/': (context) => const AuthScreen(),
@@ -17,4 +19,6 @@ final Map<String, WidgetBuilder> appRoutes = {
   '/workregist': (context) => const WorkregistScreen(),
   '/orderlist': (context) => const OrderListScreen(),
   '/orders': (context) => const OrderScreen(),
+  '/riwayat': (context) => const RiwayatScreen(),
+  '/dompet': (context) => const DompetScreen()
 };
